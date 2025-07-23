@@ -1,0 +1,515 @@
+.wrapper{
+
+    display:flex;
+    width:100%;
+    height:100vh;
+    position: fixed;
+ 
+
+}.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+     width:100%;
+    height:60px;
+    position: fixed;
+    left:0;
+    top:0;
+    background-color: aliceblue;
+
+font-family: questrial;
+z-index: 100;
+}
+.navbar h1{
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    font-weight: 400;
+}
+.navbar button{
+    font-size: 15px;
+    background-color: transparent;
+    padding:10px;
+    border-radius: 30px;
+    margin-left: 20px;
+    color:rgb(0, 0, 0);
+    margin-right: 20px;
+    border: 0px;
+
+
+}button{
+    font-family: lexend;
+    border: 0px;
+}button:hover{
+background-color: #d6e8ff;
+}.sidebar button:hover{
+background-color: #d6e8ff;
+}
+.navbar div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}.sidebar{
+    width:300px;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+align-items: center;
+background-color: aliceblue;
+position: sticky;
+top:0;
+left:0;
+    transition-duration: 0.3s;
+    flex-shrink: 0;
+
+overflow: hidden;
+}.sidebar button:nth-child(1){
+ margin-top: 80px;
+    padding:20px;
+    width:90%;
+    height:60px;
+    border-radius: 60px;
+    font-size: 16px;
+    margin-bottom: 20px;
+cursor:pointer;
+    font-weight: 400;
+    color:black;
+    justify-content: center;
+    font-family: questrial;
+    background-color: rgb(193, 214, 255);
+ 
+
+}.sidebar button{
+    width:90%;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+background-color: transparent;
+color:black;
+    border-radius: 20px;
+
+}.sidebar i{
+    margin-inline: 15px;
+}.sidebar p{
+    align-self: flex-start;
+    margin-left: 20px;
+    font-family: questrial;
+    padding:6px;
+    border-radius: 6px;
+    background-color: #d6e8ff;
+    font-size: 12px;
+}.navbar h1 i{
+    padding:10px;
+    background-color:#d6e8ff;
+    margin-right:10px;
+    border-radius: 20px;
+}.mainbar{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Outfit;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    position: sticky;
+    top:0;
+
+
+}.Search{
+    width:96%;
+    max-width: 600px;
+    border:1px solid lightgrey;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: space-around;
+    position:relative;
+    border-radius: 40px;
+    font-family:outfit;
+margin-top: 30px;
+margin-bottom: 30px;
+
+
+}
+.Search input{
+    width:60%;
+    height:100%;
+    background-color: transparent;
+    border: 0px;
+    outline:none;
+    font-family: Outfit;
+    font-size: 16px;
+    padding-inline: 15px;
+}.Search p{
+    margin-left: 15px;
+}
+.Search button{
+    padding:10px;
+    border-radius: 30px;
+    background-color: transparent;
+    margin-right: 10px;
+}button{
+    font-family: lexend;
+    border: 0px;
+    transition-duration: 0.3s;
+}button:hover{
+background-color: #d6e8ff;
+}.sidebar button:hover{
+background-color: #d6e8ff;
+}.mainbar h1{
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 40px;
+    padding:10px;
+    margin-bottom: 10px;
+
+}
+.mainbar h1 span{
+    color:rgb(0,90,255);
+    margin-right: 20px;
+    margin-left: 5%;
+    
+}a{
+    font-style: normal;
+    text-decoration: none;
+    width:90%;
+}.showback{
+    font-size:500px;
+    position: absolute;
+    color:rgb(210, 228, 255);
+    top:80px;
+    right:50px;
+    z-index: -1;
+    opacity: 50%;
+
+
+}.form{
+    width:96%;
+    max-width: 500px;
+    display:flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 50px;
+}.form label{
+    font-size: 18px;
+    padding:10px;
+    border-radius: 10px;
+
+    width: fit-content;
+   margin-top: 20px;
+   margin-bottom: 0px;
+}.custom-button{
+    padding:15px;
+    width:90%;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: rgb(229, 243, 255);
+  
+}#myselect {
+  appearance: none; /* Remove default OS styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+font-family: lexend;
+  background-color: #e7f4ff;
+  color: rgb(0, 0, 0);
+  padding: 10px 40px 10px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+height: 50px;
+width:90%;
+margin-top: 20px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%227%22%20viewBox%3D%220%200%2010%207%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%207%205-7z%22%20fill%3D%22white%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}.submit{
+    padding:15px;
+    background-color: rgb(209, 224, 255);
+    width:200px;
+    border-radius: 10px;
+
+}
+.loaderdiv{
+    width:96%;
+
+    align-self: center;
+   
+    display:flex;
+    flex-wrap:wrap;
+    border-radius: 30px;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}.close{
+    opacity:0%;
+    display:none;
+    transition-duration: 0.3s;
+}.more{
+    display: none;
+}.dis{
+    flex-direction: row;
+    display:flex;
+    
+}
+.textfile{
+    width:96%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+ padding:3px;
+
+height:50px;
+border-bottom: 1px solid lightgrey;
+    margin:10px;
+    font-weight: 400;
+}
+.textfile p{
+    font-size: 15px;
+    color:rgb(31, 31, 31);
+    padding:10px;
+    background-color: whitesmoke;
+    border-radius: 40px;
+}.textfile i:nth-child(1){
+    padding:10px;
+    font-size: 12px;
+    color:white;
+    background-color: rgb(255, 217, 0);
+border-radius: 40px;
+width:15px;
+text-align: center;
+}.textfile i:nth-child(6){
+    font-size: 12px;
+    padding:10px;
+    border-radius: 40px;
+    background-color: rgb(216, 237, 255);
+    width:15px;
+    margin-inline: 5px;
+}.textfile a{
+    width:35%;
+    min-width: 250px;
+   
+  
+}.textfile a p{
+    background-color: rgb(0,95,255);
+    color:white;
+     text-align: center;
+}
+@media(max-width:700px){
+    .sidebar{
+        position: fixed;
+        display:none;
+        z-index: 10;
+    }
+    .navbar{
+        height:60px;
+
+    }.navbar h1{
+        font-size: 15px;
+        flex-shrink: 0;
+        margin-left: -10px;
+    }.navbar button{
+        font-size: 14px;
+        width:100px;
+        margin-left: 10px;
+        margin-right: 20px;
+        width:fit-content
+    }.dis{
+        flex-direction: column;
+        position:absolute;
+        background-color: white;
+        padding:20px;
+        border-radius: 20px;
+        top:50px;
+        right:-100%;
+
+
+    }
+    .more{
+        display: block;
+    }
+    .close{
+    display:flex;
+    opacity: 100%;
+    transition-duration: 0.3s;
+    right:0%
+}.mainbar h1{
+    font-size: 20px;
+    margin-top: 40px;
+}.showback{
+    font-size: 200px;
+    opacity: 50%;
+}
+.loaderdiv p{
+    font-size: 12px;
+    padding:5px;
+    flex-shrink: 0;
+
+}.loaderdiv{
+    padding-bottom: 100px;
+}.textfile{
+    justify-content: space-around;
+    width:96%;
+    margin-left: 0px;
+}
+.textfile p{
+    font-size: 13px;
+    padding: 10px;
+    flex-shrink: 0;
+}.textfile p:nth-child(4){
+    display: none;
+}.textfile p:nth-child(3){
+    display: none;
+}
+}.imagefile{
+     width:96%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+ padding:3px;
+ border-radius: 20px;
+    border: 1px solid lightgrey;
+    margin:10px;
+    font-weight: 400;
+    max-width: 340px;
+    height:200px;
+    align-self: center;
+     background-image: url("https://tse2.mm.bing.net/th/id/OIP.90sDWdblfZFiciIEpsGFwwHaEY?rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+
+
+
+}
+.imagefile a{
+
+color:black;
+font-style: normal;
+    display: flex;
+    align-items: center;
+    background-color: white;
+   width:180px;
+    justify-content: space-evenly;
+   
+    flex-shrink: 0;
+
+    border-radius: 40px;
+    background-color: rgba(240, 248, 255, 0.768);
+}.imagefile button{
+    flex-shrink: 0;
+    color:bLack;
+    background-color:rgb(189, 224, 255);
+    padding:10px;
+    border-radius: 30px;
+    width:40px;
+
+    
+}.imagefile a{
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.date{
+    padding:10px;
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.675);
+    margin-top: 160px;
+    color:white;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-left: -50px;
+}.music{
+    padding:15px;
+    color:aliceblue;
+    background-color: rgba(0, 0, 0, 0.521);
+    margin-top: 170px;
+    margin-left: -150px;
+    border-radius: 30px;
+}.uploaddiv{
+    position: absolute;
+   width:100%;
+   height:100%;
+ z-index: 20;
+   background-color: white;
+   font-family: Montserrat;
+   padding:20px;
+   border-radius: 30px;
+   align-self: center;
+display: none;
+   flex-direction: column;
+
+
+}.open{
+    display:flex;
+}.closebutton{
+    margin-top: 80px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    padding:10px;
+    background-color: aliceblue;
+    width:35px;
+    border-radius: 40px;
+}.uploaddiv p{
+    width:96%;
+    max-width: 300px;
+    border: 1px solid lightgrey;
+    padding:10px;
+    border-radius: 20px;
+
+
+}.uitop{
+    width:96%;
+    display:flex;
+    flex-wrap: wrap;
+    height:fit-content;
+    justify-content: space-evenly;
+    align-self: center;
+    margin-left:-20px;
+    margin-top: 80px;
+}.uitopdiv{
+    width:96%;
+    max-width: 500px;
+ margin-bottom:20px;
+
+    background-color: whitesmoke;
+    padding:20px;
+    border-radius: 30px;
+    color:white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://media.istockphoto.com/id/2166499240/photo/digital-data-tunnel-technology-concept-information-flow-artificial-intelligence.webp?a=1&b=1&s=612x612&w=0&k=20&c=tunk9vYyV8VKjoShLWj-6rxPk92tzZRyFtdqE05daS4=");
+}.uitopdiv i{
+    padding:10px;
+    background-color: rgb(0,90,255);
+    font-size: 25px;
+    color:white;
+    border-radius: 100px;
+    flex-shrink: 0;
+
+
+}.uitopdiv p{
+    margin-inline: 10px;
+}.uitop button{
+    padding:15px;
+    font-size: 16px;
+    border: 0px;
+    background-color: white;
+    border-radius: 40px;
+}.dr{
+    font-size: 20px;
+    color:grey;
+    margin-left: 10%;
+    margin-top:-20px;
+    margin-bottom: 30px;
+}

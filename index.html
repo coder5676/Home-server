@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileNest</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+   
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cal Sans' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="wrapper">
+    <div class="navbar">
+      <div> <button onclick="togglesidebar()" class="de"><i class="fi fi-rr-angle-small-left"></i></button>
+        <h1> <i class="fi fi-rr-bring-front"></i> FileNest</h1></div> 
+        <div class="dis">
+            <button>How to use ?</button>
+            <button style="background-color:rgb(202, 221, 255);color:rgb(0, 0, 0);padding:15px;font-size: 15px;font-family:Outfit;width:160px">Create account</button>
+        </div>
+        <button class="more" onclick="toggletop()"><i class="fi fi-rr-apps"></i></button>
+
+    </div>
+<div class="sidebar">
+ <button onclick="loadhtml()">Upload <i class="fi fi-rr-add"></i></button>
+    <p>My Files</p>
+    <button id="docbut"><i class="fi fi-rr-document"></i>Docs</button>
+    <button id="imgbut"><i class="fi fi-rr-camera" ></i>Photos</button>
+    <button id="vidbut"><i class="fi fi-rr-play-alt"></i>Videos</button>
+    <button id="audbut"><i class="fi fi-rr-music"></i>Music and audio</button>
+    <p>Actions</p>
+    <button><i class="fi fi-rr-clock"></i>Recents</button>
+    <button> <i class="fi fi-rr-box"></i>Storage</button>
+    <button><i class="fi fi-rr-trash"></i>Trash</button>
+    
+
+</div>
+<div class="uploaddiv">
+    <button onclick="closeupload()" class="closebutton"><i class="fi fi-rr-cross"></i></button>
+ <h1 style="margin-top: 20px;margin-bottom:-30px;margin-left: 20px;font-size: 25px; font-weight: 400;display:flex;align-items: center;justify-content: space-around;width:250px"><i class="fi fi-rr-cloud-upload"></i> Upload new file</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="form">
+        <div class="showback">
+          <i class="fi fi-rr-file"></i>
+        </div>
+          <label>Select category:</label>
+        <select name="category" required  id="myselect">
+            <option value="docs">Docs</option>
+            <option value="videos">Videos</option>
+            <option value="audio">Audio</option>
+            <option value="images">Images</option>
+        </select>
+        <label>Select file:</label>
+        <input type="file" name="file" required hidden="hidden" id="realfile"><br><br>
+<button type="button" class="custom-button" id="trigg">Choose File</button>
+<p id="filename">File name ...</p>
+        
+
+      <br><br>
+
+        <button type="submit" class="submit">Upload</button>
+    </form>
+    </div>
+    <div class="mainbar">
+        <div class="uitop">
+            <div class="uitopdiv">
+                <i class="fi fi-rr-music"></i>
+                <div><h1>Open music player to listen your favourite songs.</h1>
+                    <button>Start music</button>
+                </div>
+            </div>
+            <div class="uitopdiv" style="background-image: url('https://tse3.mm.bing.net/th/id/OIP.zJFbLPNnP4Cx-NM44ndkzgHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3');">
+                 <i class="fi fi-rr-play" ></i>
+                <div><h1>Open video player to watch your favourite videos and movies.</h1>
+                   
+                    <button>Start videoplayer</button>
+                </div>
+            </div>
+        </div>
+
+        <h1><span><i class="fi fi-rr-document"></i></span>Files and media.</h1>
+          <div class="Search">
+
+            <p>Search</p>
+            <input placeholder="Type something here ...">
+            <button><i class="fi fi-rr-search"></i></button>
+
+        </div>
+      
+        <div class="loaderdiv">
+           
+          <!-- <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-play"></i><p>2:13:00</p><button><i class="fi fi-rr-share"></i></button></div><p class="date">12 july 2024</p></a>
+            <a class="textfile"><i class="f fi-rr-file"></i><p>Video by ramu</p><p>12 july </p><p>20mb</p><p>Mp3</p><i class="fi fi-rr-share"></i></a>
+            <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-camera"></i><p>12 july 2024</p><button><i class="fi fi-rr-share"></i></button></div></a>
+            <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-camera"></i><p>12 july 2024</p></div><i class="fi fi-rr-share"></i></a>
+            <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-camera"></i><p>12 july 2024</p></div><i class="fi fi-rr-share"></i></a>
+            <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-camera"></i><p>12 july 2024</p></div><i class="fi fi-rr-share"></i></a>
+
+            <a class="imagefile"><button><i class="fi fi-rr-grid"></i></button><div><i class="fi fi-rr-music"></i><p>12 july 2024</p><button><i class="fi fi-rr-share"></i></button>
+            </div>
+            <p class="music">Watch your world on fire ...</p></a>--->
+
+
+
+    
+
+        </div>
+    </div></div>
+</body>
+</html>
+<script src="script.js"></script>
