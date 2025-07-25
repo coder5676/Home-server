@@ -512,4 +512,9 @@ display: none;
     margin-left: 10%;
     margin-top:-20px;
     margin-bottom: 30px;
+}#we{
+    padding:10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    
 }
