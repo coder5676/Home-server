@@ -4,6 +4,9 @@ const port = 3000;
 const path = require('path');
 const multer=require('multer');
 const fs=require('fs');
+const qrcode=require('qrcode');
+const os = require('os');
+
 
 const uploadsdir=path.join(__dirname,"uploads")
 if(!fs.existsSync(uploadsdir)){
@@ -58,8 +61,46 @@ app.get("/files/list", (req, res) => {
   res.json(JSON.parse(data));
 });
 
+  function getIPv4() {
+  const nets = os.networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      if (net.family === 'IPv4' && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  return '127.0.0.1';
+}
+
+
 app.use("/files", express.static(path.join(__dirname, "uploads")));
-app.use(express.static(path.join(__dirname,"public")));
+app.use("/filenest",express.static(path.join(__dirname,"public")));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'port.html'));
+});
+
+app.get("/serverinfo", async (req, res) => {
+  const ipv4 = getIPv4(); // ✅ DEFINE IT FIRST
+  const appurl = `http://${ipv4}:${port}/filenest/`;
+ 
+
+  try {
+    const qr = await qrcode.toDataURL(appurl);
+    res.json({
+      ip: ipv4,
+      port: port,
+      status: "Running",
+      qr
+    });
+  } catch (error) {
+    console.error("QR generation failed", error);
+    res.status(500).json({ error: "Failed to generate QR code" });
+  }
+});
+
+
 
 app.listen(port,"0.0.0.0", () => {
   console.log(`Example app listening on port ${port}`)
