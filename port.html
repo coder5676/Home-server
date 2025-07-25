@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+
+
+</head>
+<body style="font-family:montserrat">
+    <div class="maindiv" style="display:flex;flex-direction: column;">
+        <p id="we">Scan to access files</p>
+        <img id="qrcode">
+        
+    </div>
+    <div class="maindiv">
+       <p id="we">
+        Connect to server
+
+       </p>
+         <h1 class="re">
+            Network and Access 
+        </h1>
+
+         <h5>
+            Server status
+        </h5>
+        <h2 id="status">
+            Running
+        </h2>
+        <h5>
+            Connect on Ipv4.
+        </h5>
+        <h2 id="ipurl">
+            120.30.20.144:3000
+        </h2>
+
+    </div>
+    
+</body>
+</html>
+<style>
+    body{
+        display:flex;
+    }
+    #we{
+        padding:20px;
+      font-weight: 900;
+        margin-bottom: 70px;
+        width:fit-content;
+        border-radius: 20px;
+        margin-left: 20px;
+        font-size: 20px;
+        color:rgb(255, 255, 255);
+       background-color: rgb(0,95,255);
+       font-weight: 400;
+       
+    }.maindiv{
+        width:50%;
+        height:100vh;
+          background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }.re{
+        margin-left: 30px;
+        font-size: 40px;
+        color:rgb(72, 72, 72);
+        font-weight: 400;
+    }.maindiv h5{
+        margin-left: 30px;
+        padding:10px;
+        color:rgb(235, 242, 255);
+        background-color: rgb(40, 40, 40);
+        width:fit-content;
+        border-radius: 10px;
+        margin-top: 60px;
+    }.maindiv h2{
+        padding:20px;
+        font-size: 40px;
+        letter-spacing: 2px;
+    border-bottom: 4px solid dodgerblue;
+        width:80%;
+        margin-left: 30px;
+        color:rgb(0, 0, 0);
+
+        font-family: questrial;
+    
+    }
+    .maindiv img{
+        width:500px;
+        height:500px;
+        background-color: rgb(255, 255, 255);
+        align-self: center;
+        border-radius: 20px;
+    }.maindiv:nth-child(1){
+        background: radial-gradient(circle,rgb(203, 222, 255),rgb(255, 255, 255));
+    }
+
+
+</style>
+<script>
+    
+     fetch('/serverinfo')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        const url = `${data.ip}:${data.port}`;
+        document.getElementById('ipurl').textContent = url;
+        document.getElementById('status').textContent =  data.status;
+        document.getElementById('qrcode').src =  data.qr;
+
+
+        // Generate QR code in canvas
+
+    });
+
+</script>
